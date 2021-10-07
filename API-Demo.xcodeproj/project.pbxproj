@@ -11,6 +11,10 @@
 		2EBAB229270F1A5E009BD78C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAB227270F1A5E009BD78C /* LoginView.swift */; };
 		2EBAB22C270F1D45009BD78C /* View+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAB22B270F1D45009BD78C /* View+Padding.swift */; };
 		2EBAB230270F1D4E009BD78C /* View+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAB22E270F1D4E009BD78C /* View+Padding.swift */; };
+		2EBAB233270F1E7A009BD78C /* Microya in Frameworks */ = {isa = PBXBuildFile; productRef = 2EBAB232270F1E7A009BD78C /* Microya */; };
+		2EBAB236270F1E88009BD78C /* Microya in Frameworks */ = {isa = PBXBuildFile; productRef = 2EBAB235270F1E88009BD78C /* Microya */; };
+		2EBAB238270F1ECE009BD78C /* PapershiftApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAB237270F1ECE009BD78C /* PapershiftApi.swift */; };
+		2EBAB239270F1ECE009BD78C /* PapershiftApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAB237270F1ECE009BD78C /* PapershiftApi.swift */; };
 		2ED8C0BF270F08B800E7858D /* ApiDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8C0AF270F08B600E7858D /* ApiDemoApp.swift */; };
 		2ED8C0C0270F08B800E7858D /* ApiDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED8C0AF270F08B600E7858D /* ApiDemoApp.swift */; };
 		2ED8C0C3270F08B800E7858D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED8C0B1270F08B800E7858D /* Assets.xcassets */; };
@@ -21,6 +25,7 @@
 		2EBAB227270F1A5E009BD78C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2EBAB22B270F1D45009BD78C /* View+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Padding.swift"; sourceTree = "<group>"; };
 		2EBAB22E270F1D4E009BD78C /* View+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Padding.swift"; sourceTree = "<group>"; };
+		2EBAB237270F1ECE009BD78C /* PapershiftApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapershiftApi.swift; sourceTree = "<group>"; };
 		2ED8C0AF270F08B600E7858D /* ApiDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDemoApp.swift; sourceTree = "<group>"; };
 		2ED8C0B1270F08B800E7858D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2ED8C0B6270F08B800E7858D /* API-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EBAB233270F1E7A009BD78C /* Microya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,12 +47,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EBAB236270F1E88009BD78C /* Microya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EBAB234270F1E88009BD78C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2ED8C0A9270F08B600E7858D = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +68,7 @@
 				2ED8C0CE270F0A9100E7858D /* iOS */,
 				2ED8C0BD270F08B800E7858D /* macOS */,
 				2ED8C0B7270F08B800E7858D /* Products */,
+				2EBAB234270F1E88009BD78C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +77,7 @@
 			children = (
 				2ED8C0AF270F08B600E7858D /* ApiDemoApp.swift */,
 				2EBAB227270F1A5E009BD78C /* LoginView.swift */,
+				2EBAB237270F1ECE009BD78C /* PapershiftApi.swift */,
 				2ED8C0B1270F08B800E7858D /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -110,6 +126,9 @@
 			dependencies = (
 			);
 			name = "App-iOS";
+			packageProductDependencies = (
+				2EBAB232270F1E7A009BD78C /* Microya */,
+			);
 			productName = "API-Demo (iOS)";
 			productReference = 2ED8C0B6270F08B800E7858D /* API-Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +146,9 @@
 			dependencies = (
 			);
 			name = "App-macOS";
+			packageProductDependencies = (
+				2EBAB235270F1E88009BD78C /* Microya */,
+			);
 			productName = "API-Demo (macOS)";
 			productReference = 2ED8C0BC270F08B800E7858D /* API-Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -158,6 +180,9 @@
 				Base,
 			);
 			mainGroup = 2ED8C0A9270F08B600E7858D;
+			packageReferences = (
+				2EBAB231270F1E7A009BD78C /* XCRemoteSwiftPackageReference "Microya" */,
+			);
 			productRefGroup = 2ED8C0B7270F08B800E7858D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,6 +219,7 @@
 			files = (
 				2EBAB228270F1A5E009BD78C /* LoginView.swift in Sources */,
 				2EBAB22C270F1D45009BD78C /* View+Padding.swift in Sources */,
+				2EBAB238270F1ECE009BD78C /* PapershiftApi.swift in Sources */,
 				2ED8C0BF270F08B800E7858D /* ApiDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +230,7 @@
 			files = (
 				2EBAB229270F1A5E009BD78C /* LoginView.swift in Sources */,
 				2EBAB230270F1D4E009BD78C /* View+Padding.swift in Sources */,
+				2EBAB239270F1ECE009BD78C /* PapershiftApi.swift in Sources */,
 				2ED8C0C0270F08B800E7858D /* ApiDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +501,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2EBAB231270F1E7A009BD78C /* XCRemoteSwiftPackageReference "Microya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flinesoft/Microya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2EBAB232270F1E7A009BD78C /* Microya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EBAB231270F1E7A009BD78C /* XCRemoteSwiftPackageReference "Microya" */;
+			productName = Microya;
+		};
+		2EBAB235270F1E88009BD78C /* Microya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EBAB231270F1E7A009BD78C /* XCRemoteSwiftPackageReference "Microya" */;
+			productName = Microya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2ED8C0AA270F08B600E7858D /* Project object */;
 }
