@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E88DBF6271876E700EF83A2 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2E88DBF5271876E700EF83A2 /* SwiftyJSON */; };
+		2E88DBF82718779500EF83A2 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2E88DBF72718779500EF83A2 /* SwiftyJSON */; };
+		2E88DBFA2718815C00EF83A2 /* TimeTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88DBF92718815C00EF83A2 /* TimeTrackingView.swift */; };
+		2E88DBFB2718815C00EF83A2 /* TimeTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88DBF92718815C00EF83A2 /* TimeTrackingView.swift */; };
 		2EBAB228270F1A5E009BD78C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAB227270F1A5E009BD78C /* LoginView.swift */; };
 		2EBAB229270F1A5E009BD78C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAB227270F1A5E009BD78C /* LoginView.swift */; };
 		2EBAB22C270F1D45009BD78C /* View+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAB22B270F1D45009BD78C /* View+Padding.swift */; };
@@ -22,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E88DBF92718815C00EF83A2 /* TimeTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackingView.swift; sourceTree = "<group>"; };
 		2EBAB227270F1A5E009BD78C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2EBAB22B270F1D45009BD78C /* View+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Padding.swift"; sourceTree = "<group>"; };
 		2EBAB22E270F1D4E009BD78C /* View+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Padding.swift"; sourceTree = "<group>"; };
@@ -39,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E88DBF6271876E700EF83A2 /* SwiftyJSON in Frameworks */,
 				2EBAB233270F1E7A009BD78C /* Microya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E88DBF82718779500EF83A2 /* SwiftyJSON in Frameworks */,
 				2EBAB236270F1E88009BD78C /* Microya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E88DBFC2718857C00EF83A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2EBAB227270F1A5E009BD78C /* LoginView.swift */,
+				2E88DBF92718815C00EF83A2 /* TimeTrackingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2EBAB234270F1E88009BD78C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,9 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				2ED8C0AF270F08B600E7858D /* ApiDemoApp.swift */,
-				2EBAB227270F1A5E009BD78C /* LoginView.swift */,
 				2EBAB237270F1ECE009BD78C /* PapershiftApi.swift */,
 				2ED8C0B1270F08B800E7858D /* Assets.xcassets */,
+				2E88DBFC2718857C00EF83A2 /* Views */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -128,6 +144,7 @@
 			name = "App-iOS";
 			packageProductDependencies = (
 				2EBAB232270F1E7A009BD78C /* Microya */,
+				2E88DBF5271876E700EF83A2 /* SwiftyJSON */,
 			);
 			productName = "API-Demo (iOS)";
 			productReference = 2ED8C0B6270F08B800E7858D /* API-Demo.app */;
@@ -148,6 +165,7 @@
 			name = "App-macOS";
 			packageProductDependencies = (
 				2EBAB235270F1E88009BD78C /* Microya */,
+				2E88DBF72718779500EF83A2 /* SwiftyJSON */,
 			);
 			productName = "API-Demo (macOS)";
 			productReference = 2ED8C0BC270F08B800E7858D /* API-Demo.app */;
@@ -182,6 +200,7 @@
 			mainGroup = 2ED8C0A9270F08B600E7858D;
 			packageReferences = (
 				2EBAB231270F1E7A009BD78C /* XCRemoteSwiftPackageReference "Microya" */,
+				2E88DBF4271876E700EF83A2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 2ED8C0B7270F08B800E7858D /* Products */;
 			projectDirPath = "";
@@ -219,6 +238,7 @@
 			files = (
 				2EBAB228270F1A5E009BD78C /* LoginView.swift in Sources */,
 				2EBAB22C270F1D45009BD78C /* View+Padding.swift in Sources */,
+				2E88DBFA2718815C00EF83A2 /* TimeTrackingView.swift in Sources */,
 				2EBAB238270F1ECE009BD78C /* PapershiftApi.swift in Sources */,
 				2ED8C0BF270F08B800E7858D /* ApiDemoApp.swift in Sources */,
 			);
@@ -230,6 +250,7 @@
 			files = (
 				2EBAB229270F1A5E009BD78C /* LoginView.swift in Sources */,
 				2EBAB230270F1D4E009BD78C /* View+Padding.swift in Sources */,
+				2E88DBFB2718815C00EF83A2 /* TimeTrackingView.swift in Sources */,
 				2EBAB239270F1ECE009BD78C /* PapershiftApi.swift in Sources */,
 				2ED8C0C0270F08B800E7858D /* ApiDemoApp.swift in Sources */,
 			);
@@ -503,17 +524,35 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2E88DBF4271876E700EF83A2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		2EBAB231270F1E7A009BD78C /* XCRemoteSwiftPackageReference "Microya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Flinesoft/Microya.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.6.0;
+				minimumVersion = 0.7.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2E88DBF5271876E700EF83A2 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E88DBF4271876E700EF83A2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		2E88DBF72718779500EF83A2 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E88DBF4271876E700EF83A2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		2EBAB232270F1E7A009BD78C /* Microya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2EBAB231270F1E7A009BD78C /* XCRemoteSwiftPackageReference "Microya" */;

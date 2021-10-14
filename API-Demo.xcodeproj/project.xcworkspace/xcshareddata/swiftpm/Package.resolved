@@ -15,8 +15,17 @@
         "repositoryURL": "https://github.com/Flinesoft/Microya.git",
         "state": {
           "branch": null,
-          "revision": "3cbfb6751867cc57e7362cda6e4b1da8a79be179",
-          "version": "0.6.0"
+          "revision": "8d5ed85227722f5f0d53b26da4273b9e7f5a2f62",
+          "version": "0.7.0"
+        }
+      },
+      {
+        "package": "SwiftyJSON",
+        "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON.git",
+        "state": {
+          "branch": "master",
+          "revision": "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
+          "version": null
         }
       },
       {

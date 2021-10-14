@@ -1,15 +1,23 @@
 import Foundation
 import Microya
 
+let papershiftApi = ApiProvider<PapershiftEndpoint>(
+  baseUrl: URL(string: "https://papershift-web.herokuapp.com/api/v3")!,
+  plugins: [
+    HttpAuthPlugin(
+      scheme: .bearer,
+      tokenClosure: { UserDefaults.standard.string(forKey: "bearerToken") }
+    ),
+    RequestLoggerPlugin { print($0) },
+    ResponseLoggerPlugin { print($0) }
+  ]
+)
+
 enum PapershiftEndpoint {
   case signIn(request: SignInRequest)
-  case timeTrackingAction(workspaceId: String, request: TimeTrackingActionRequest)
-  case paginated(endpoint: PaginatedEndpoint, page: Int)
-
-  enum PaginatedEndpoint {
-    case workspaces(accountId: String)
-    case timeTrackings(workspaceId: String)
-  }
+  case fetchCurrentUser
+  case sendTimeTrackingAction(workspaceId: String, request: TimeTrackingActionRequest)
+  case fetchTimeTrackings(workspaceId: String, page: Int)
 }
 
 // MARK: -  Request Data Types
@@ -32,11 +40,11 @@ enum TimeTrackingAction: String, Codable {
   case end = "end"
 }
 
-struct ApiRequestWrapper<ObjectType: Encodable>: Encodable {
-  let data: DataRequestWrapper<ObjectType>
+struct JsonApiWrapper<ObjectType: Encodable>: Encodable {
+  let data: DataWrapper<ObjectType>
 }
 
-struct DataRequestWrapper<ObjectType: Encodable>: Encodable {
+struct DataWrapper<ObjectType: Encodable>: Encodable {
   public let type: String
   public let attributes: ObjectType
 }
@@ -48,33 +56,33 @@ extension PapershiftEndpoint: Endpoint {
     case .signIn:
       return "/sign_in"
 
-    case let .timeTrackingAction(workspaceId, _):
+    case .fetchCurrentUser:
+      return "/users/me"
+
+    case .sendTimeTrackingAction(let workspaceId, _):
       return "/workspaces/\(workspaceId)/time_trackings/actions"
 
-    case let .paginated(.workspaces(accountId), _):
-      return "/accounts/\(accountId)/workspaces"
-
-    case let .paginated(.timeTrackings(workspaceId), _):
+    case .fetchTimeTrackings(let workspaceId, _):
       return "/workspaces/\(workspaceId)/time_trackings"
     }
   }
 
   var method: HttpMethod {
     switch self {
-    case let .signIn(request):
+    case .signIn(let request):
       return .post(body: try! encoder.encode(wrapped(request, type: "user")))
 
-    case let .timeTrackingAction(_, request):
+    case .sendTimeTrackingAction(_, let request):
       return .post(body: try! encoder.encode(wrapped(request, type: "action")))
 
-    case .paginated:
+    case .fetchCurrentUser, .fetchTimeTrackings:
       return .get
     }
   }
 
   var queryParameters: [String: QueryParameterValue] {
     switch self {
-    case let .paginated(_, page):
+    case .fetchTimeTrackings(_, let page):
       return ["page": .string(String(page))]
 
     default:
@@ -82,8 +90,15 @@ extension PapershiftEndpoint: Endpoint {
     }
   }
 
-  func wrapped<RequestType: Encodable>(_ request: RequestType, type: String) -> ApiRequestWrapper<RequestType> {
-    ApiRequestWrapper(data: DataRequestWrapper(type: type, attributes: request))
+  var headers: [String: String] {
+    [
+      "Accept-Language": "\(Locale.current.languageCode ?? "en")",
+      "Content-Type": "application/vnd.api+json"
+    ]
+  }
+
+  func wrapped<RequestType: Encodable>(_ request: RequestType, type: String) -> JsonApiWrapper<RequestType> {
+    JsonApiWrapper(data: DataWrapper(type: type, attributes: request))
   }
 
   typealias ClientErrorType = PapershiftError
@@ -97,6 +112,3 @@ struct PapershiftError: Decodable {
     let title: String
   }
 }
-
-// MARK: - Response Data Types
-// TODO: [cg_2021-10-07] not yet implemented
