@@ -2,12 +2,11 @@ import SwiftUI
 
 @main
 struct ApiDemoApp: App {
-  @AppStorage("userId") var userId: String?
-  @AppStorage("username") var username: String?
-
+  @AppStorage("signedIn") var signedIn: Bool = false
+  
   var body: some Scene {
     WindowGroup {
-      if userId != nil && username != nil {
+      if signedIn {
         TimeTrackingView()
           .platformSpecificPadding()
       } else {

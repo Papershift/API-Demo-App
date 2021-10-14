@@ -3,7 +3,10 @@ import SwiftUI
 struct TimeTrackingView: View {
   @AppStorage("userId") var userId: String = ""
   @AppStorage("username") var username: String = ""
+  @AppStorage("workspaceId") var workspaceId: String = ""
   @AppStorage("avatarPath") var avatarPath: String?
+
+  @State var ongoingRequestActionType: TimeTrackingAction?
 
   var body: some View {
     VStack {
@@ -29,19 +32,35 @@ struct TimeTrackingView: View {
 
       HStack {
         Button(action: sendStartAction) {
-          Label("Start", systemImage: "play.fill")
+          if ongoingRequestActionType == .start {
+            ProgressView()
+          } else {
+            Label("Start", systemImage: "play.fill")
+          }
         }
 
         Button(action: sendPauseAction) {
-          Label("Pause", systemImage: "pause.fill")
+          if ongoingRequestActionType == .startBreak {
+            ProgressView()
+          } else {
+            Label("Pause", systemImage: "pause.fill")
+          }
         }
 
         Button(action: sendContinueAction) {
-          Label("Continue", systemImage: "playpause.fill")
+          if ongoingRequestActionType == .endBreak {
+            ProgressView()
+          } else {
+            Label("Continue", systemImage: "playpause.fill")
+          }
         }
 
         Button(action: sendStopAction) {
-          Label("Stop", systemImage: "stop.fill")
+          if ongoingRequestActionType == .end {
+            ProgressView()
+          } else {
+            Label("Stop", systemImage: "stop.fill")
+          }
         }
       }
     }
@@ -53,23 +72,33 @@ struct TimeTrackingView: View {
   }
 
   func sendStartAction() {
-    Task { await sendTimeTrackingAction(action: .start) }
+    Task { await sendTimeTrackingAction(actionType: .start) }
   }
 
   func sendStopAction() {
-    Task { await sendTimeTrackingAction(action: .end) }
+    Task { await sendTimeTrackingAction(actionType: .end) }
   }
 
   func sendPauseAction() {
-    Task { await sendTimeTrackingAction(action: .startBreak) }
+    Task { await sendTimeTrackingAction(actionType: .startBreak) }
   }
 
   func sendContinueAction() {
-    Task { await sendTimeTrackingAction(action: .endBreak) }
+    Task { await sendTimeTrackingAction(actionType: .endBreak) }
   }
 
-  func sendTimeTrackingAction(action: TimeTrackingAction) async {
-    // TODO: [cg_2021-10-14] not yet implemented
+  func sendTimeTrackingAction(actionType: TimeTrackingAction) async {
+    // send POST to /api/v3/workspaces/:workspace_id:/time_trackings/actions endpoint
+    let request = TimeTrackingActionRequest(actionType: actionType, actionTime: Date.now, userId: Int(userId)!)
+    let endpoint = PapershiftEndpoint.sendTimeTrackingAction(workspaceId: workspaceId, request: request)
+
+    ongoingRequestActionType = actionType
+    do {
+      _ = try await papershiftApi.rawDataResponse(on: endpoint).get()
+    } catch {
+      print(error)
+    }
+    ongoingRequestActionType = nil
   }
 }
 
