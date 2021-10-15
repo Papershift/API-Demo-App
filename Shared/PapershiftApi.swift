@@ -29,7 +29,7 @@ enum PapershiftEndpoint {
   case signIn(request: SignInRequest)
   case fetchCurrentUser
   case sendTimeTrackingAction(workspaceId: String, request: TimeTrackingActionRequest)
-  case fetchTimeTrackings(workspaceId: String, page: Int)
+  case fetchRunningTimeTrackings(workspaceId: String)
 }
 
 // MARK: -  Request Data Types
@@ -40,7 +40,7 @@ struct SignInRequest: Encodable {
 
 struct TimeTrackingActionRequest: Encodable {
   let actionType: TimeTrackingAction
-  let deviceId: String = UUID().uuidString
+  let deviceId: String? = nil
   let actionTime: Date
   let userId: Int
 }
@@ -74,7 +74,7 @@ extension PapershiftEndpoint: Endpoint {
     case .sendTimeTrackingAction(let workspaceId, _):
       return "/workspaces/\(workspaceId)/time_trackings/actions"
       
-    case .fetchTimeTrackings(let workspaceId, _):
+    case .fetchRunningTimeTrackings(let workspaceId):
       return "/workspaces/\(workspaceId)/time_trackings"
     }
   }
@@ -87,15 +87,15 @@ extension PapershiftEndpoint: Endpoint {
     case .sendTimeTrackingAction(_, let request):
       return .post(body: try! encoder.encode(wrapped(request, type: "action")))
       
-    case .fetchCurrentUser, .fetchTimeTrackings:
+    case .fetchCurrentUser, .fetchRunningTimeTrackings:
       return .get
     }
   }
   
   var queryParameters: [String: QueryParameterValue] {
     switch self {
-    case .fetchTimeTrackings(_, let page):
-      return ["page": .string(String(page))]
+    case .fetchRunningTimeTrackings:
+      return ["filter[running]": .string("1"), "include": .string("breaks")]
       
     default:
       return [:]
@@ -107,13 +107,6 @@ extension PapershiftEndpoint: Endpoint {
       "Accept-Language": "\(Locale.current.languageCode ?? "en")",
       "Content-Type": "application/vnd.api+json"
     ]
-  }
-
-  public var decoder: JSONDecoder {
-    let decoder = JSONDecoder()
-    decoder.dateDecodingStrategy = .iso8601
-    decoder.keyDecodingStrategy = .convertFromSnakeCase
-    return decoder
   }
 
   public var encoder: JSONEncoder {

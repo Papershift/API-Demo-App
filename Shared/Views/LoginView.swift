@@ -7,6 +7,15 @@ struct LoginView: View {
   @State var password: String = ""
 
   @State var requestIsOngoing: Bool = false
+
+  @AppStorage("userId") var userId: String?
+  @AppStorage("username") var username: String?
+  @AppStorage("avatarPath") var avatarPath: String?
+  @AppStorage("accountId") var accountId: String?
+  @AppStorage("workspaceId") var workspaceId: String?
+
+  @AppStorage("signedIn") var signedIn: Bool?
+  @AppStorage("bearerToken") var bearerToken: String?
   
   var body: some View {
     Form {
@@ -41,8 +50,7 @@ struct LoginView: View {
     let responseJson = try! JSON(data: responseData)
     
     // get HTTP Bearer access token & persist for future requests
-    let bearerToken = responseJson["data"]["attributes"]["access_token"].stringValue
-    UserDefaults.standard.set(bearerToken, forKey: "bearerToken")
+    bearerToken = responseJson["data"]["attributes"]["access_token"].stringValue
   }
   
   func fetchCurrentUser() async {
@@ -52,23 +60,16 @@ struct LoginView: View {
     let responseJson = try! JSON(data: responseData)
     
     // get user id, name and avatar URL & persist for future usage
-    let userId = responseJson["data"]["id"].stringValue
-    let username = responseJson["data"]["attributes"]["username"].stringValue
-    let avatarPath = responseJson["data"]["attributes"]["avatar"].stringValue
-    
-    UserDefaults.standard.set(userId, forKey: "userId")
-    UserDefaults.standard.set(username, forKey: "username")
-    UserDefaults.standard.set(avatarPath, forKey: "avatarPath")
+    userId = responseJson["data"]["id"].stringValue
+    username = responseJson["data"]["attributes"]["username"].stringValue
+    avatarPath = responseJson["data"]["attributes"]["avatar"].stringValue
     
     // get account ID and workspace ID from relationships & persist for future usage
-    let accountId = responseJson["data"]["relationships"]["account"]["data"]["id"].stringValue
-    let workspaceId = responseJson["data"]["relationships"]["workspaces"]["data"].arrayValue[0]["id"].stringValue
-    
-    UserDefaults.standard.set(accountId, forKey: "accountId")
-    UserDefaults.standard.set(workspaceId, forKey: "workspaceId")
+    accountId = responseJson["data"]["relationships"]["account"]["data"]["id"].stringValue
+    workspaceId = responseJson["data"]["relationships"]["workspaces"]["data"].arrayValue[0]["id"].stringValue
     
     // set app to signed in mode
-    UserDefaults.standard.set(true, forKey: "signedIn")
+    signedIn = true
   }
 }
 
