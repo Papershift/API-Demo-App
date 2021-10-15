@@ -8,12 +8,14 @@
 		<dict>
 			<key>IntentsRestrictedWhileLocked</key>
 			<array/>
+			<key>IntentsRestrictedWhileProtectedDataUnavailable</key>
+			<array/>
 			<key>IntentsSupported</key>
 			<array>
-				<string>StartTimeTrackingIntent</string>
-				<string>StartBreakIntent</string>
 				<string>EndBreakIntent</string>
 				<string>EndTimeTrackingIntent</string>
+				<string>StartBreakIntent</string>
+				<string>StartTimeTrackingIntent</string>
 			</array>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>

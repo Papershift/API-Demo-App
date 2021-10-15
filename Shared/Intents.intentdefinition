@@ -31,8 +31,16 @@
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
+					<key>INIntentParameterCombinationSubtitle</key>
+					<string>Signals a "start" action for the signed in user to Papershift.</string>
+					<key>INIntentParameterCombinationSubtitleID</key>
+					<string>FWO7Xl</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Start time tracking</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>wvYoVX</string>
 				</dict>
 			</dict>
 			<key>INIntentResponse</key>
@@ -91,8 +99,16 @@
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
+					<key>INIntentParameterCombinationSubtitle</key>
+					<string>Signals a "start break" action for the signed in user to Papershift.</string>
+					<key>INIntentParameterCombinationSubtitleID</key>
+					<string>vphy7C</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Start break</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>8YNGG9</string>
 				</dict>
 			</dict>
 			<key>INIntentResponse</key>
@@ -151,8 +167,16 @@
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
+					<key>INIntentParameterCombinationSubtitle</key>
+					<string>Signals a "end break" action for the signed in user to Papershift.</string>
+					<key>INIntentParameterCombinationSubtitleID</key>
+					<string>fjTyH4</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>End break</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>QLlmaq</string>
 				</dict>
 			</dict>
 			<key>INIntentResponse</key>
@@ -211,8 +235,16 @@
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
+					<key>INIntentParameterCombinationSubtitle</key>
+					<string>Signals a "end" action for the signed in user to Papershift.</string>
+					<key>INIntentParameterCombinationSubtitleID</key>
+					<string>V9HEd4</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>End time tracking</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>Lf66NW</string>
 				</dict>
 			</dict>
 			<key>INIntentResponse</key>
