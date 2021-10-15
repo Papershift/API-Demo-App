@@ -13,6 +13,17 @@
 		2E88DBF82718779500EF83A2 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2E88DBF72718779500EF83A2 /* SwiftyJSON */; };
 		2E88DBFA2718815C00EF83A2 /* TimeTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88DBF92718815C00EF83A2 /* TimeTrackingView.swift */; };
 		2E88DBFB2718815C00EF83A2 /* TimeTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88DBF92718815C00EF83A2 /* TimeTrackingView.swift */; };
+		2EB2A7E02719B5F9006BB63C /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2EB2A7DF2719B5F9006BB63C /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
+		2EB2A7E12719B5F9006BB63C /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2EB2A7DF2719B5F9006BB63C /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
+		2EB2A7E52719B964006BB63C /* Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB2A7E42719B964006BB63C /* Shortcuts.swift */; };
+		2EB2A7E62719B964006BB63C /* Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB2A7E42719B964006BB63C /* Shortcuts.swift */; };
+		2EB2A7FF2719BB43006BB63C /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB2A7EC2719BAE9006BB63C /* Intents.framework */; platformFilter = maccatalyst; };
+		2EB2A8062719BB43006BB63C /* Shortcuts.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2EB2A7FE2719BB43006BB63C /* Shortcuts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2EB2A80A2719BB60006BB63C /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2EB2A7DF2719B5F9006BB63C /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
+		2EB2A80C2719BFCF006BB63C /* TimeTrackingActionIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB2A80B2719BFCF006BB63C /* TimeTrackingActionIntentHandler.swift */; };
+		2EB2A80D2719BFE1006BB63C /* PapershiftApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAB237270F1ECE009BD78C /* PapershiftApi.swift */; };
+		2EB2A80F2719BFEA006BB63C /* Microya in Frameworks */ = {isa = PBXBuildFile; productRef = 2EB2A80E2719BFEA006BB63C /* Microya */; };
+		2EB2A8102719C884006BB63C /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB2A7EF2719BAEA006BB63C /* IntentHandler.swift */; };
 		2EBAB228270F1A5E009BD78C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAB227270F1A5E009BD78C /* LoginView.swift */; };
 		2EBAB229270F1A5E009BD78C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAB227270F1A5E009BD78C /* LoginView.swift */; };
 		2EBAB22C270F1D45009BD78C /* View+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAB22B270F1D45009BD78C /* View+Padding.swift */; };
@@ -27,8 +38,42 @@
 		2ED8C0C4270F08B800E7858D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED8C0B1270F08B800E7858D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2EB2A8042719BB43006BB63C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2ED8C0AA270F08B600E7858D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EB2A7FD2719BB43006BB63C;
+			remoteInfo = Shortcuts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2EB2A7F92719BAEA006BB63C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2EB2A8062719BB43006BB63C /* Shortcuts.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2E88DBF92718815C00EF83A2 /* TimeTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackingView.swift; sourceTree = "<group>"; };
+		2EB2A7DF2719B5F9006BB63C /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		2EB2A7E22719B65F006BB63C /* App-macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "App-macOS-Info.plist"; sourceTree = "<group>"; };
+		2EB2A7E32719B65F006BB63C /* App-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "App-iOS-Info.plist"; sourceTree = "<group>"; };
+		2EB2A7E42719B964006BB63C /* Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcuts.swift; sourceTree = "<group>"; };
+		2EB2A7EC2719BAE9006BB63C /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		2EB2A7EF2719BAEA006BB63C /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		2EB2A7F12719BAEA006BB63C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EB2A7F52719BAEA006BB63C /* Shortcuts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shortcuts.entitlements; sourceTree = "<group>"; };
+		2EB2A7FE2719BB43006BB63C /* Shortcuts.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Shortcuts.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EB2A80B2719BFCF006BB63C /* TimeTrackingActionIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackingActionIntentHandler.swift; sourceTree = "<group>"; };
 		2EBAB227270F1A5E009BD78C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2EBAB22B270F1D45009BD78C /* View+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Padding.swift"; sourceTree = "<group>"; };
 		2EBAB22E270F1D4E009BD78C /* View+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Padding.swift"; sourceTree = "<group>"; };
@@ -42,6 +87,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2EB2A7FB2719BB43006BB63C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EB2A7FF2719BB43006BB63C /* Intents.framework in Frameworks */,
+				2EB2A80F2719BFEA006BB63C /* Microya in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2ED8C0B3270F08B800E7858D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -74,9 +128,21 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2EB2A7EE2719BAEA006BB63C /* Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				2EB2A7F52719BAEA006BB63C /* Shortcuts.entitlements */,
+				2EB2A7F12719BAEA006BB63C /* Info.plist */,
+				2EB2A7EF2719BAEA006BB63C /* IntentHandler.swift */,
+				2EB2A80B2719BFCF006BB63C /* TimeTrackingActionIntentHandler.swift */,
+			);
+			path = Shortcuts;
+			sourceTree = "<group>";
+		};
 		2EBAB234270F1E88009BD78C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EB2A7EC2719BAE9006BB63C /* Intents.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -84,9 +150,12 @@
 		2ED8C0A9270F08B600E7858D = {
 			isa = PBXGroup;
 			children = (
+				2EB2A7E32719B65F006BB63C /* App-iOS-Info.plist */,
+				2EB2A7E22719B65F006BB63C /* App-macOS-Info.plist */,
 				2ED8C0AE270F08B600E7858D /* Shared */,
 				2ED8C0CE270F0A9100E7858D /* iOS */,
 				2ED8C0BD270F08B800E7858D /* macOS */,
+				2EB2A7EE2719BAEA006BB63C /* Shortcuts */,
 				2ED8C0B7270F08B800E7858D /* Products */,
 				2EBAB234270F1E88009BD78C /* Frameworks */,
 			);
@@ -95,8 +164,10 @@
 		2ED8C0AE270F08B600E7858D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2EB2A7DF2719B5F9006BB63C /* Intents.intentdefinition */,
 				2ED8C0AF270F08B600E7858D /* ApiDemoApp.swift */,
 				2EBAB237270F1ECE009BD78C /* PapershiftApi.swift */,
+				2EB2A7E42719B964006BB63C /* Shortcuts.swift */,
 				2ED8C0B1270F08B800E7858D /* Assets.xcassets */,
 				2E88DBFC2718857C00EF83A2 /* Views */,
 			);
@@ -108,6 +179,7 @@
 			children = (
 				2ED8C0B6270F08B800E7858D /* API-Demo.app */,
 				2ED8C0BC270F08B800E7858D /* API-Demo.app */,
+				2EB2A7FE2719BB43006BB63C /* Shortcuts.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +205,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2EB2A7FD2719BB43006BB63C /* Shortcuts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EB2A8072719BB43006BB63C /* Build configuration list for PBXNativeTarget "Shortcuts" */;
+			buildPhases = (
+				2EB2A7FA2719BB43006BB63C /* Sources */,
+				2EB2A7FB2719BB43006BB63C /* Frameworks */,
+				2EB2A7FC2719BB43006BB63C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shortcuts;
+			packageProductDependencies = (
+				2EB2A80E2719BFEA006BB63C /* Microya */,
+			);
+			productName = Shortcuts;
+			productReference = 2EB2A7FE2719BB43006BB63C /* Shortcuts.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		2ED8C0B5270F08B800E7858D /* App-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2ED8C0C7270F08B800E7858D /* Build configuration list for PBXNativeTarget "App-iOS" */;
@@ -140,10 +232,12 @@
 				2ED8C0B2270F08B800E7858D /* Sources */,
 				2ED8C0B3270F08B800E7858D /* Frameworks */,
 				2ED8C0B4270F08B800E7858D /* Resources */,
+				2EB2A7F92719BAEA006BB63C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2EB2A8052719BB43006BB63C /* PBXTargetDependency */,
 			);
 			name = "App-iOS";
 			packageProductDependencies = (
@@ -187,6 +281,9 @@
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					2EB2A7FD2719BB43006BB63C = {
+						CreatedOnToolsVersion = 13.0;
+					};
 					2ED8C0B5270F08B800E7858D = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -215,11 +312,19 @@
 			targets = (
 				2ED8C0B5270F08B800E7858D /* App-iOS */,
 				2ED8C0BB270F08B800E7858D /* App-macOS */,
+				2EB2A7FD2719BB43006BB63C /* Shortcuts */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2EB2A7FC2719BB43006BB63C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2ED8C0B4270F08B800E7858D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,12 +344,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2EB2A7FA2719BB43006BB63C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EB2A80C2719BFCF006BB63C /* TimeTrackingActionIntentHandler.swift in Sources */,
+				2EB2A80A2719BB60006BB63C /* Intents.intentdefinition in Sources */,
+				2EB2A8102719C884006BB63C /* IntentHandler.swift in Sources */,
+				2EB2A80D2719BFE1006BB63C /* PapershiftApi.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2ED8C0B2270F08B800E7858D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EB2A7E02719B5F9006BB63C /* Intents.intentdefinition in Sources */,
 				2EBAB228270F1A5E009BD78C /* LoginView.swift in Sources */,
 				2EBAB22C270F1D45009BD78C /* View+Padding.swift in Sources */,
+				2EB2A7E52719B964006BB63C /* Shortcuts.swift in Sources */,
 				2E88DBFA2718815C00EF83A2 /* TimeTrackingView.swift in Sources */,
 				2EBAB238270F1ECE009BD78C /* PapershiftApi.swift in Sources */,
 				2ED8C0BF270F08B800E7858D /* ApiDemoApp.swift in Sources */,
@@ -255,8 +373,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EB2A7E12719B5F9006BB63C /* Intents.intentdefinition in Sources */,
 				2EBAB229270F1A5E009BD78C /* LoginView.swift in Sources */,
 				2EBAB230270F1D4E009BD78C /* View+Padding.swift in Sources */,
+				2EB2A7E62719B964006BB63C /* Shortcuts.swift in Sources */,
 				2E88DBFB2718815C00EF83A2 /* TimeTrackingView.swift in Sources */,
 				2EBAB239270F1ECE009BD78C /* PapershiftApi.swift in Sources */,
 				2ED8C0C0270F08B800E7858D /* ApiDemoApp.swift in Sources */,
@@ -265,7 +385,72 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2EB2A8052719BB43006BB63C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EB2A7FD2719BB43006BB63C /* Shortcuts */;
+			targetProxy = 2EB2A8042719BB43006BB63C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2EB2A8082719BB43006BB63C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Shortcuts/Shortcuts.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 75Q95DLGC7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Shortcuts/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Shortcuts;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.papershift.API-Demo.Shortcuts";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2EB2A8092719BB43006BB63C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Shortcuts/Shortcuts.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 75Q95DLGC7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Shortcuts/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Shortcuts;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.papershift.API-Demo.Shortcuts";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		2ED8C0C5270F08B800E7858D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -384,6 +569,7 @@
 		2ED8C0C8270F08B800E7858D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/App.entitlements;
@@ -392,6 +578,7 @@
 				DEVELOPMENT_TEAM = 75Q95DLGC7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "App-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -415,6 +602,7 @@
 		2ED8C0C9270F08B800E7858D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/App.entitlements;
@@ -423,6 +611,7 @@
 				DEVELOPMENT_TEAM = 75Q95DLGC7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "App-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -457,6 +646,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "App-macOS-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -484,6 +674,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "App-macOS-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -501,6 +692,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2EB2A8072719BB43006BB63C /* Build configuration list for PBXNativeTarget "Shortcuts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EB2A8082719BB43006BB63C /* Debug */,
+				2EB2A8092719BB43006BB63C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2ED8C0AD270F08B600E7858D /* Build configuration list for PBXProject "API-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -577,6 +777,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E88DBF4271876E700EF83A2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		2EB2A80E2719BFEA006BB63C /* Microya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EBAB231270F1E7A009BD78C /* XCRemoteSwiftPackageReference "Microya" */;
+			productName = Microya;
 		};
 		2EBAB232270F1E7A009BD78C /* Microya */ = {
 			isa = XCSwiftPackageProductDependency;

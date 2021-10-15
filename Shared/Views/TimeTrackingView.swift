@@ -7,10 +7,14 @@ struct TimeTrackingView: View {
     case running, paused
   }
 
-  @AppStorage("userId") var userId: String = ""
-  @AppStorage("username") var username: String = ""
-  @AppStorage("workspaceId") var workspaceId: String = ""
-  @AppStorage("avatarPath") var avatarPath: String?
+  @AppStorage("userId", store: sharedUserDefaults)
+  var userId: String = ""
+  @AppStorage("username", store: sharedUserDefaults)
+  var username: String = ""
+  @AppStorage("workspaceId", store: sharedUserDefaults)
+  var workspaceId: String = ""
+  @AppStorage("avatarPath", store: sharedUserDefaults)
+  var avatarPath: String?
 
   @State var ongoingRequestActionType: TimeTrackingAction?
   @State var runningTimeTrackingState: TimeTrackingState?
@@ -115,8 +119,10 @@ struct TimeTrackingView: View {
 
   func logout() {
     for key in ["signedIn", "userId", "username", "accountId", "workspaceId", "avatarPath"] {
-      UserDefaults.standard.removeObject(forKey: key)
+      sharedUserDefaults.removeObject(forKey: key)
     }
+
+    Shortcuts.removeAll()
   }
 
   func sendTimeTrackingAction(actionType: TimeTrackingAction) async {

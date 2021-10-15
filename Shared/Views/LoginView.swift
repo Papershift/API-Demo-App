@@ -8,14 +8,21 @@ struct LoginView: View {
 
   @State var requestIsOngoing: Bool = false
 
-  @AppStorage("userId") var userId: String?
-  @AppStorage("username") var username: String?
-  @AppStorage("avatarPath") var avatarPath: String?
-  @AppStorage("accountId") var accountId: String?
-  @AppStorage("workspaceId") var workspaceId: String?
+  @AppStorage("userId", store: sharedUserDefaults)
+  var userId: String?
+  @AppStorage("username", store: sharedUserDefaults)
+  var username: String?
+  @AppStorage("avatarPath", store: sharedUserDefaults)
+  var avatarPath: String?
+  @AppStorage("accountId", store: sharedUserDefaults)
+  var accountId: String?
+  @AppStorage("workspaceId", store: sharedUserDefaults)
+  var workspaceId: String?
 
-  @AppStorage("signedIn") var signedIn: Bool?
-  @AppStorage("bearerToken") var bearerToken: String?
+  @AppStorage("signedIn", store: sharedUserDefaults)
+  var signedIn: Bool?
+  @AppStorage("bearerToken", store: sharedUserDefaults)
+  var bearerToken: String?
   
   var body: some View {
     Form {
@@ -70,6 +77,7 @@ struct LoginView: View {
     
     // set app to signed in mode
     signedIn = true
+    Shortcuts.provideActionsToSystem()
   }
 }
 

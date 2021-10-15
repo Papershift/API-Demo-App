@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>INEnums</key>
+	<array/>
+	<key>INIntentDefinitionModelVersion</key>
+	<string>1.2</string>
+	<key>INIntentDefinitionNamespace</key>
+	<string>sIt4CN</string>
+	<key>INIntentDefinitionSystemVersion</key>
+	<string>21A5552a</string>
+	<key>INIntentDefinitionToolsBuildVersion</key>
+	<string>13A5212g</string>
+	<key>INIntentDefinitionToolsVersion</key>
+	<string>13.0</string>
+	<key>INIntents</key>
+	<array>
+		<dict>
+			<key>INIntentCategory</key>
+			<string>generic</string>
+			<key>INIntentDescription</key>
+			<string>Signals a "start" action for the signed in user to Papershift.</string>
+			<key>INIntentDescriptionID</key>
+			<string>mHgkO4</string>
+			<key>INIntentName</key>
+			<string>StartTimeTracking</string>
+			<key>INIntentParameterCombinations</key>
+			<dict>
+				<key></key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<true/>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+				</dict>
+			</dict>
+			<key>INIntentResponse</key>
+			<dict>
+				<key>INIntentResponseCodes</key>
+				<array>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>The time tracking has been started.</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>U28k1E</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>The time tracking has been started.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>gS66vu</string>
+						<key>INIntentResponseCodeName</key>
+						<string>success</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>Starting the time tracking failed.</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>RJOP3q</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>Starting the time tracking failed.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>kq4c3E</string>
+						<key>INIntentResponseCodeName</key>
+						<string>failure</string>
+					</dict>
+				</array>
+			</dict>
+			<key>INIntentTitle</key>
+			<string>Start Time Tracking</string>
+			<key>INIntentTitleID</key>
+			<string>BQboR4</string>
+			<key>INIntentType</key>
+			<string>Custom</string>
+			<key>INIntentVerb</key>
+			<string>Do</string>
+		</dict>
+		<dict>
+			<key>INIntentCategory</key>
+			<string>generic</string>
+			<key>INIntentDescription</key>
+			<string>Signals a "start break" action for the signed in user to Papershift.</string>
+			<key>INIntentDescriptionID</key>
+			<string>nhwHfw</string>
+			<key>INIntentName</key>
+			<string>StartBreak</string>
+			<key>INIntentParameterCombinations</key>
+			<dict>
+				<key></key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<true/>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+				</dict>
+			</dict>
+			<key>INIntentResponse</key>
+			<dict>
+				<key>INIntentResponseCodes</key>
+				<array>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>The break has been started.</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>uWA3TX</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>The break has been started.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>rEBMWQ</string>
+						<key>INIntentResponseCodeName</key>
+						<string>success</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>Starting the break failed.</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>lWSxKP</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>Starting the break failed.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>kjE5Pn</string>
+						<key>INIntentResponseCodeName</key>
+						<string>failure</string>
+					</dict>
+				</array>
+			</dict>
+			<key>INIntentTitle</key>
+			<string>Start Break</string>
+			<key>INIntentTitleID</key>
+			<string>LS1kqI</string>
+			<key>INIntentType</key>
+			<string>Custom</string>
+			<key>INIntentVerb</key>
+			<string>Do</string>
+		</dict>
+		<dict>
+			<key>INIntentCategory</key>
+			<string>generic</string>
+			<key>INIntentDescription</key>
+			<string>Signals a "end break" action for the signed in user to Papershift.</string>
+			<key>INIntentDescriptionID</key>
+			<string>g425GG</string>
+			<key>INIntentName</key>
+			<string>EndBreak</string>
+			<key>INIntentParameterCombinations</key>
+			<dict>
+				<key></key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<true/>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+				</dict>
+			</dict>
+			<key>INIntentResponse</key>
+			<dict>
+				<key>INIntentResponseCodes</key>
+				<array>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>The break has been ended.</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>oWBQHN</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>The break has been ended.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>oBvB5W</string>
+						<key>INIntentResponseCodeName</key>
+						<string>success</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>Ending the break failed.</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>YKnmqW</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>Ending the break failed.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>C70E55</string>
+						<key>INIntentResponseCodeName</key>
+						<string>failure</string>
+					</dict>
+				</array>
+			</dict>
+			<key>INIntentTitle</key>
+			<string>End Break</string>
+			<key>INIntentTitleID</key>
+			<string>aOZrms</string>
+			<key>INIntentType</key>
+			<string>Custom</string>
+			<key>INIntentVerb</key>
+			<string>Do</string>
+		</dict>
+		<dict>
+			<key>INIntentCategory</key>
+			<string>generic</string>
+			<key>INIntentDescription</key>
+			<string>Signals a "end" action for the signed in user to Papershift.</string>
+			<key>INIntentDescriptionID</key>
+			<string>sZaksh</string>
+			<key>INIntentName</key>
+			<string>EndTimeTracking</string>
+			<key>INIntentParameterCombinations</key>
+			<dict>
+				<key></key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<true/>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+				</dict>
+			</dict>
+			<key>INIntentResponse</key>
+			<dict>
+				<key>INIntentResponseCodes</key>
+				<array>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>The time tracking has been ended.</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>WgX4oO</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>The time tracking has been ended.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>9AD2e1</string>
+						<key>INIntentResponseCodeName</key>
+						<string>success</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeConciseFormatString</key>
+						<string>Ending the time tracking failed.</string>
+						<key>INIntentResponseCodeConciseFormatStringID</key>
+						<string>wfgo56</string>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>Ending the time tracking failed.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>K9kFOl</string>
+						<key>INIntentResponseCodeName</key>
+						<string>failure</string>
+					</dict>
+				</array>
+			</dict>
+			<key>INIntentTitle</key>
+			<string>End Time Tracking</string>
+			<key>INIntentTitleID</key>
+			<string>scYsza</string>
+			<key>INIntentType</key>
+			<string>Custom</string>
+			<key>INIntentVerb</key>
+			<string>Do</string>
+		</dict>
+	</array>
+	<key>INTypes</key>
+	<array/>
+</dict>
+</plist>

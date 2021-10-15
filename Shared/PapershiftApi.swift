@@ -6,7 +6,7 @@ let papershiftApi = ApiProvider<PapershiftEndpoint>(
   plugins: [
     HttpAuthPlugin(
       scheme: .bearer,
-      tokenClosure: { UserDefaults.standard.string(forKey: "bearerToken") }
+      tokenClosure: { sharedUserDefaults.string(forKey: "bearerToken") }
     ),
     RequestLoggerPlugin { request in
       print(request)
@@ -24,6 +24,8 @@ let papershiftApi = ApiProvider<PapershiftEndpoint>(
     },
   ]
 )
+
+let sharedUserDefaults = UserDefaults(suiteName: "group.com.papershift.API-Demo")!
 
 enum PapershiftEndpoint {
   case signIn(request: SignInRequest)
