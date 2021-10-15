@@ -1,4 +1,5 @@
 import SwiftUI
+import HandySwiftUI
 
 struct TimeTrackingView: View {
   @AppStorage("userId") var userId: String = ""
@@ -16,7 +17,6 @@ struct TimeTrackingView: View {
           content: { image in
             image.resizable()
               .aspectRatio(contentMode: .fill)
-              .frame(width: 50, height: 50)
               .cornerRadius(25)
               .clipped()
           },
@@ -24,45 +24,50 @@ struct TimeTrackingView: View {
             ProgressView()
           }
         )
-          .padding()
+          .frame(width: 50, height: 50)
 
         Text("Hi, \(username)!")
           .font(.title)
       }
+      .padding()
 
-      HStack {
+      Spacer()
+
+      AdaptiveStack {
         Button(action: sendStartAction) {
-          if ongoingRequestActionType == .start {
-            ProgressView()
-          } else {
-            Label("Start", systemImage: "play.fill")
-          }
+          Label("Start", systemImage: "play.fill")
         }
+        .buttonStyle(.borderedProminent).controlSize(.large)
+        .progressOverlay(type: .indeterminate(running: ongoingRequestActionType == .start))
 
         Button(action: sendPauseAction) {
-          if ongoingRequestActionType == .startBreak {
-            ProgressView()
-          } else {
-            Label("Pause", systemImage: "pause.fill")
-          }
+          Label("Pause", systemImage: "pause.fill")
         }
+        .buttonStyle(.bordered).controlSize(.large)
+        .progressOverlay(type: .indeterminate(running: ongoingRequestActionType == .startBreak))
 
         Button(action: sendContinueAction) {
-          if ongoingRequestActionType == .endBreak {
-            ProgressView()
-          } else {
-            Label("Continue", systemImage: "playpause.fill")
-          }
+          Label("Continue", systemImage: "playpause.fill")
         }
+        .buttonStyle(.bordered).controlSize(.large)
+        .progressOverlay(type: .indeterminate(running: ongoingRequestActionType == .endBreak))
 
         Button(action: sendStopAction) {
-          if ongoingRequestActionType == .end {
-            ProgressView()
-          } else {
-            Label("Stop", systemImage: "stop.fill")
-          }
+          Label("Stop", systemImage: "stop.fill")
         }
+        .buttonStyle(.borderedProminent).controlSize(.large)
+        .progressOverlay(type: .indeterminate(running: ongoingRequestActionType == .end))
       }
+      .padding()
+
+      Spacer()
+
+      Button(action: logout) {
+        Label("Logout", systemImage: "person.fill.xmark")
+      }
+      .tint(.systemRed)
+      .buttonStyle(.bordered).controlSize(.mini)
+      .padding()
     }
   }
 
@@ -85,6 +90,12 @@ struct TimeTrackingView: View {
 
   func sendContinueAction() {
     Task { await sendTimeTrackingAction(actionType: .endBreak) }
+  }
+
+  func logout() {
+    for key in ["signedIn", "userId", "username", "accountId", "workspaceId", "avatarPath"] {
+      UserDefaults.standard.removeObject(forKey: key)
+    }
   }
 
   func sendTimeTrackingAction(actionType: TimeTrackingAction) async {

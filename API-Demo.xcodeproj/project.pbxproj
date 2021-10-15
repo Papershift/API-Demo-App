@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0CA7D127196C6E00F9D6FC /* HandySwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2E0CA7D027196C6E00F9D6FC /* HandySwiftUI */; };
+		2E0CA7D327196C8600F9D6FC /* HandySwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2E0CA7D227196C8600F9D6FC /* HandySwiftUI */; };
 		2E88DBF6271876E700EF83A2 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2E88DBF5271876E700EF83A2 /* SwiftyJSON */; };
 		2E88DBF82718779500EF83A2 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2E88DBF72718779500EF83A2 /* SwiftyJSON */; };
 		2E88DBFA2718815C00EF83A2 /* TimeTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88DBF92718815C00EF83A2 /* TimeTrackingView.swift */; };
@@ -44,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0CA7D127196C6E00F9D6FC /* HandySwiftUI in Frameworks */,
 				2E88DBF6271876E700EF83A2 /* SwiftyJSON in Frameworks */,
 				2EBAB233270F1E7A009BD78C /* Microya in Frameworks */,
 			);
@@ -53,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0CA7D327196C8600F9D6FC /* HandySwiftUI in Frameworks */,
 				2E88DBF82718779500EF83A2 /* SwiftyJSON in Frameworks */,
 				2EBAB236270F1E88009BD78C /* Microya in Frameworks */,
 			);
@@ -145,6 +149,7 @@
 			packageProductDependencies = (
 				2EBAB232270F1E7A009BD78C /* Microya */,
 				2E88DBF5271876E700EF83A2 /* SwiftyJSON */,
+				2E0CA7D027196C6E00F9D6FC /* HandySwiftUI */,
 			);
 			productName = "API-Demo (iOS)";
 			productReference = 2ED8C0B6270F08B800E7858D /* API-Demo.app */;
@@ -166,6 +171,7 @@
 			packageProductDependencies = (
 				2EBAB235270F1E88009BD78C /* Microya */,
 				2E88DBF72718779500EF83A2 /* SwiftyJSON */,
+				2E0CA7D227196C8600F9D6FC /* HandySwiftUI */,
 			);
 			productName = "API-Demo (macOS)";
 			productReference = 2ED8C0BC270F08B800E7858D /* API-Demo.app */;
@@ -201,6 +207,7 @@
 			packageReferences = (
 				2EBAB231270F1E7A009BD78C /* XCRemoteSwiftPackageReference "Microya" */,
 				2E88DBF4271876E700EF83A2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				2E0CA7CF27196C6E00F9D6FC /* XCRemoteSwiftPackageReference "HandySwiftUI" */,
 			);
 			productRefGroup = 2ED8C0B7270F08B800E7858D /* Products */;
 			projectDirPath = "";
@@ -524,6 +531,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2E0CA7CF27196C6E00F9D6FC /* XCRemoteSwiftPackageReference "HandySwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flinesoft/HandySwiftUI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		2E88DBF4271876E700EF83A2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -543,6 +558,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2E0CA7D027196C6E00F9D6FC /* HandySwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E0CA7CF27196C6E00F9D6FC /* XCRemoteSwiftPackageReference "HandySwiftUI" */;
+			productName = HandySwiftUI;
+		};
+		2E0CA7D227196C8600F9D6FC /* HandySwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E0CA7CF27196C6E00F9D6FC /* XCRemoteSwiftPackageReference "HandySwiftUI" */;
+			productName = HandySwiftUI;
+		};
 		2E88DBF5271876E700EF83A2 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2E88DBF4271876E700EF83A2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;

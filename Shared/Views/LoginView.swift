@@ -1,26 +1,35 @@
 import SwiftUI
 import SwiftyJSON
+import HandySwiftUI
 
 struct LoginView: View {
   @State var email: String = ""
   @State var password: String = ""
+
+  @State var requestIsOngoing: Bool = false
   
   var body: some View {
     Form {
       Section {
         TextField("Email", text: $email)
           .textContentType(.username)
-        
+
         SecureField("Password", text: $password)
           .textContentType(.password)
+          .onSubmit { login() }
       }
-      
-      Button("Login") {
-        Task {
-          await performSignIn()
-          await fetchCurrentUser()
-        }
-      }
+
+      Button("Login", action: login)
+        .progressOverlay(type: .indeterminate(running: requestIsOngoing))
+    }
+  }
+
+  func login() {
+    Task {
+      requestIsOngoing = true
+      await performSignIn()
+      await fetchCurrentUser()
+      requestIsOngoing = false
     }
   }
   

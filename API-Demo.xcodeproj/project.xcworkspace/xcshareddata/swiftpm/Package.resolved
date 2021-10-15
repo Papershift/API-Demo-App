@@ -11,12 +11,39 @@
         }
       },
       {
+        "package": "HandySwift",
+        "repositoryURL": "https://github.com/Flinesoft/HandySwift.git",
+        "state": {
+          "branch": null,
+          "revision": "5d6a6df5232eff28f9f71048e5745706d02be1f8",
+          "version": "3.4.0"
+        }
+      },
+      {
+        "package": "HandySwiftUI",
+        "repositoryURL": "https://github.com/Flinesoft/HandySwiftUI",
+        "state": {
+          "branch": "main",
+          "revision": "4d2d7248e761f094abdb51d065dc9bf5b1092fff",
+          "version": null
+        }
+      },
+      {
         "package": "Microya",
         "repositoryURL": "https://github.com/Flinesoft/Microya.git",
         "state": {
           "branch": null,
           "revision": "8d5ed85227722f5f0d53b26da4273b9e7f5a2f62",
           "version": "0.7.0"
+        }
+      },
+      {
+        "package": "Introspect",
+        "repositoryURL": "https://github.com/siteline/SwiftUI-Introspect.git",
+        "state": {
+          "branch": null,
+          "revision": "2e09be8af614401bc9f87d40093ec19ce56ccaf2",
+          "version": "0.1.3"
         }
       },
       {
