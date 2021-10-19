@@ -118,10 +118,7 @@ struct TimeTrackingView: View {
   }
 
   func logout() {
-    for key in ["signedIn", "userId", "username", "accountId", "workspaceId", "avatarPath"] {
-      sharedUserDefaults.removeObject(forKey: key)
-    }
-
+    sharedUserDefaults.removeAll()
     Shortcuts.removeAll()
   }
 

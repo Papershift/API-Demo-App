@@ -14,6 +14,9 @@ struct ApiDemoApp: App {
         LoginView()
           .platformSpecificPadding()
           .frame(minWidth: 400, minHeight: 150)
+          .onAppear {
+            sharedUserDefaults.removeAll()
+          }
       }
     }
   }

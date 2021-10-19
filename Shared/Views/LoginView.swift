@@ -76,6 +76,9 @@ struct LoginView: View {
     workspaceId = responseJson["data"]["relationships"]["workspaces"]["data"].arrayValue[0]["id"].stringValue
     
     // set app to signed in mode
+    email = ""
+    password = ""
+
     signedIn = true
     Shortcuts.provideActionsToSystem()
   }

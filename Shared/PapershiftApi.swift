@@ -27,6 +27,12 @@ let papershiftApi = ApiProvider<PapershiftEndpoint>(
 
 let sharedUserDefaults = UserDefaults(suiteName: "group.com.papershift.API-Demo")!
 
+extension UserDefaults {
+  func removeAll() {
+    ["userId", "username", "workspaceId", "avatarPath", "accountId", "signedIn", "bearerToken"].forEach(self.removeObject(forKey:))
+  }
+}
+
 enum PapershiftEndpoint {
   case signIn(request: SignInRequest)
   case fetchCurrentUser
@@ -42,12 +48,11 @@ struct SignInRequest: Encodable {
 
 struct TimeTrackingActionRequest: Encodable {
   let actionType: TimeTrackingAction
-  let deviceId: String? = nil
   let actionTime: Date
   let userId: Int
 }
 
-enum TimeTrackingAction: String, Codable {
+enum TimeTrackingAction: String, Encodable {
   case start = "start"
   case startBreak = "start-break"
   case endBreak = "end-break"
@@ -59,8 +64,8 @@ struct JsonApiWrapper<ObjectType: Encodable>: Encodable {
 }
 
 struct DataWrapper<ObjectType: Encodable>: Encodable {
-  public let type: String
-  public let attributes: ObjectType
+  let type: String
+  let attributes: ObjectType
 }
 
 // MARK: - Endpoint Details
