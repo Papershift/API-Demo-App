@@ -2,7 +2,7 @@ import Foundation
 import Microya
 
 let papershiftApi = ApiProvider<PapershiftEndpoint>(
-  baseUrl: URL(string: "https://papershift-web.herokuapp.com/api/v3")!,
+  baseUrl: URL(string: "https://app.papershift.com/api/v3")!,
   plugins: [
     HttpAuthPlugin(
       scheme: .bearer,
