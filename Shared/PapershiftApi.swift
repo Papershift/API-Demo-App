@@ -1,26 +1,38 @@
 import Foundation
 import Microya
 
+let baseUrl: URL = {
+#if DEBUG
+  return URL(string: "https://papershift-web.herokuapp.com/api/v3")!
+#else
+  return URL(string: "https://app.papershift.com/api/v3")!
+#endif
+}()
+
 let papershiftApi = ApiProvider<PapershiftEndpoint>(
-  baseUrl: URL(string: "https://app.papershift.com/api/v3")!,
+  baseUrl: baseUrl,
   plugins: [
     HttpAuthPlugin(
       scheme: .bearer,
       tokenClosure: { sharedUserDefaults.string(forKey: "bearerToken") }
     ),
     RequestLoggerPlugin { request in
+      #if DEBUG
       print(request)
 
       if let body = request.httpBody?.prettyPrintedJsonString {
         print("Body:\n", body)
       }
+      #endif
     },
     ResponseLoggerPlugin { response in
+      #if DEBUG
       print(response)
 
       if let body = response.data?.prettyPrintedJsonString {
         print("Body:\n", body)
       }
+      #endif
     },
   ]
 )
